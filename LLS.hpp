@@ -11,7 +11,7 @@ private:
     LinkedList<T> list;
 public:
     // Constructor
-    LLS();
+    LLS() : list() {}
 
     void PrintForward() const {
         list.PrintForward();
