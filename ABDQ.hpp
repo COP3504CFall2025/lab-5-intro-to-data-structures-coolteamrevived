@@ -37,7 +37,7 @@ public:
         }
     }
     ABDQ(ABDQ&& other) noexcept : capacity_(other.capacity_), size_(other.size_), front_(other.front_), back_(other.back_){
-        data = other.data_;
+        data_ = other.data_;
         other.data_ = nullptr;
         other.capacity_ = 0;
         other.front_ = 0;
