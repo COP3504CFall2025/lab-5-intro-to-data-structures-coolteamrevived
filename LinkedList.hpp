@@ -129,7 +129,7 @@ public:
 	// Construction/Destruction
 	LinkedList() : head(nullptr), tail(nullptr), count(0) {}
 
-	LinkedList(const LinkedList<T>& list) : head(nullptr), tail(nullptr), count(list.count) {
+	LinkedList(const LinkedList<T>& list) : head(nullptr), tail(nullptr), count(0) {
 		Node* cnodp = list.head;
 		while(cnodp != nullptr){
 			addTail(cnodp->data);
