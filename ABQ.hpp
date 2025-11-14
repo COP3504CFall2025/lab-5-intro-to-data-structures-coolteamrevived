@@ -115,6 +115,8 @@ public:
             array_[i - 1] = array_[i];
         }
 
+        curr_size_--;
+
         if(curr_size_ <= capacity_ /4 && capacity_ > 1){
             size_t newcap = capacity_/scale_factor_;
             if(newcap < 1) {newcap = 1;}
@@ -128,7 +130,7 @@ public:
         }
 
 
-        curr_size_--;
+        
         return value; 
     }
 
