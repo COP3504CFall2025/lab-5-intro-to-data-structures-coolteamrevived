@@ -41,7 +41,7 @@ public:
     ABDQ& operator=(const ABDQ& other){
         if(this != &other){
             delete[] data_;
-            data_ = new T[other.capacity_];
+            data_ = new T[other.capacity_]();
             capacity_ = other.capacity_;
             front_ = 0;
             back_ = other.size_;
