@@ -15,7 +15,7 @@ public:
 	};
 	
 	// Behaviors
-	void PrintForward() const {
+	void printForward() const {
 		if(count == 0) {return;}
 		Node* cnodp = head;
 		while(cnodp->next != nullptr){
@@ -26,7 +26,7 @@ public:
 
 		
 	}
-	void PrintReverse() const {
+	void printReverse() const {
 		if(count == 0) {return;}
 		Node* cnodp = tail;
 		while(cnodp->prev != nullptr){
