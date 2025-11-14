@@ -38,13 +38,13 @@ public:
         return *this;
     } 
 
-    void PrintForward() const {
+    void printForward() const {
         for(size_t i = 0; i < curr_size_; i++){
             std::cout << array_[i] << '\n';
         }
     }
 
-    void PrintReverse() const {
+    void printReverse() const {
         for(int i = static_cast<int>(curr_size_)-1; i >= 0; i--){
             std::cout << array_[i] << '\n';
         }

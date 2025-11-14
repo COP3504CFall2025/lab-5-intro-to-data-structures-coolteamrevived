@@ -13,12 +13,12 @@ public:
     // Constructor
     LLQ(): list() {}
 
-    void PrintForward() const {
+    void printForward() const {
         list.PrintForward();
     }
 
-    void PrintReverse() const {
-        list.PrintReverse();
+    void printReverse() const {
+        list.printReverse();
     }
 
     // Insertion

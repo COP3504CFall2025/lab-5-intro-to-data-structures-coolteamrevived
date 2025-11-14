@@ -7,7 +7,7 @@
 
 
 
-
+// Shoutout to geeksforgeeks.org for circular buffer ideas
 template <typename T>
 class ABDQ : public DequeInterface<T> {
 private:
@@ -165,14 +165,14 @@ public:
     }
 
 
-    void PrintForward() const {
+    void printForward() const {
         for(size_t i = 0; i < size_; i++){
             std::cout << data_[(front_ +i) % capacity_] << '\n';
         }
     }
 
 
-    void PrintReverse() const {
+    void printReverse() const {
         for(int i = 0; i < size_; i++){
             std::cout << data_[(back_ + capacity_-i-1) % capacity_ ] << '\n';
         }

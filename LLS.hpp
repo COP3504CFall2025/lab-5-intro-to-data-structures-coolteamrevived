@@ -13,12 +13,12 @@ public:
     // Constructor
     LLS() : list() {}
 
-    void PrintForward() const {
-        list.PrintForward();
+    void printForward() const {
+        list.printForward();
     }
 
-    void PrintReverse() const {
-        list.PrintReverse();
+    void printReverse() const {
+        list.printReverse();
     }
 
     // Insertion

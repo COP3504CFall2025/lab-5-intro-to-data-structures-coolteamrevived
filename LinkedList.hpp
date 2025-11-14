@@ -90,7 +90,7 @@ public:
 		count--;
 		return true;
 	}
-	void Clear() {
+	void clear() {
 		if(count == 0) {return;}
 		Node* cnodp = head;
 		while(cnodp->next != nullptr){
@@ -103,7 +103,7 @@ public:
 	// Operators
 	LinkedList<T>& operator=(LinkedList<T>&& other) noexcept {
 		if(this != &other){
-			Clear();
+			clear();
 			head = other.head;
 			tail = other.tail;
 			count = other.count;
@@ -116,7 +116,7 @@ public:
 	}
 	LinkedList<T>& operator=(const LinkedList<T>& rhs){
 		if(this != &rhs){
-			Clear();
+			clear();
 			Node* cnodp = rhs.head;
 			while(cnodp != nullptr) {
 				addTail(cnodp->data);
@@ -142,7 +142,7 @@ public:
 		other.count = 0;
 
 	}
-	~LinkedList() {Clear();}
+	~LinkedList() {clear();}
 
 private:
 	// Stores pointers to first and last nodes and count
