@@ -115,10 +115,10 @@ public:
             array_[i - 1] = array_[i];
         }
 
-        if(curr_size_ <= capacity_ /4 && capacity > 1){
-            size_t newcap = capacity_/2;
+        if(curr_size_ <= capacity_ /4 && capacity_ > 1){
+            size_t newcap = capacity_/scale_factor_;
             if(newcap < 1) {newcap = 1;}
-            T* novarray_ new T[newcap];
+            T* novarray_ = new T[newcap];
             for(size_t i = 0; i<curr_size_; i++){
                 novarray_[i] = array_[i];
             }
@@ -126,6 +126,8 @@ public:
             array_ = novarray_;
             capacity_ = newcap;
         }
+
+        return value; 
 
         curr_size_--;
         return value; 
