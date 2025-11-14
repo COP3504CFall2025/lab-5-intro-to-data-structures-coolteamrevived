@@ -93,11 +93,14 @@ public:
 	void clear() {
 		if(count == 0) {return;}
 		Node* cnodp = head;
-		while(cnodp->next != nullptr){
-			cnodp = cnodp->next;
-			delete (cnodp->prev);
+		while(cnodp!= nullptr){
+			Node* n = cnodp->next;
+			delete cnodp;
+			cnodp = n;
 		}
-		delete cnodp;
+		count = 0;
+		head = nullptr;
+		tail = nullptr;
 	}
 
 	// Operators
