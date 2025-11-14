@@ -26,7 +26,7 @@ public:
 
     // Deletion
     T pop() override {
-        if(list.getCount() == 0) {throw std::out_of_range("Stack empty");}
+        if(list.getCount() == 0) {throw std::runtime_error("Stack empty");}
         T val = (list.getHead())->data;
         list.removeHead();
         return val;
@@ -34,7 +34,7 @@ public:
 
     // Access
     T peek() const override {
-        if(list.getCount() == 0) {throw std::out_of_range("Stack empty");}
+        if(list.getCount() == 0) {throw std::runtime_error("Stack empty");}
         return ((list.getHead())->data);
     }
 

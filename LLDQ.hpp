@@ -23,13 +23,13 @@ public:
 
     // Core Removal Operations
     T popFront() override {
-        if(list.getCount() == 0) {throw std::out_of_range("Deque empty");}
+        if(list.getCount() == 0) {throw std::runtime_error("Deque empty");}
         T val = (list.getHead())->data;
         list.removeHead();
         return val;
     }
     T popBack() override {
-        if(list.getCount() == 0) {throw std::out_of_range("Deque empty");}
+        if(list.getCount() == 0) {throw std::runtime_error("Deque empty");}
         T val = (list.getTail())->data;
         list.removeTail();
         return val;
