@@ -127,7 +127,6 @@ public:
             capacity_ = newcap;
         }
 
-        return value; 
 
         curr_size_--;
         return value; 
