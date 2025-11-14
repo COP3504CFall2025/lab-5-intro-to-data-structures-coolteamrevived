@@ -16,6 +16,16 @@ private:
 public:
     // Constructor
     LLDQ() : list() {}
+    LLDQ(const LLDQ& other) : list(other.list) {}
+    LLDQ(LLDQ&& other) noexcept : list(std::move(other.list)) {}
+    LLDQ& operator=(const LLDQ& other) {
+        if(this != &other){list = other.list;}
+        return *this;
+    }
+    LLDQ& operator=(LLDQ&& other) noexcept {
+        if(this != &other){list = std::move(other.list);}
+        return *this;
+    }
 
     // Core Insertion Operations
     void pushFront(const T& item) override {list.addHead(item);}
