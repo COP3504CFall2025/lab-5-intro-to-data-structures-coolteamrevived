@@ -13,16 +13,32 @@ public:
     // Constructor
     LLQ();
 
+    void PrintForward() const {
+        list.PrintForward();
+    }
+
+    void PrintReverse() const {
+        list.PrintReverse();
+    }
+
     // Insertion
-    void enqueue(const T& item) override;
+    void enqueue(const T& item) override {list.addTail(item);}
 
     // Deletion
-    T dequeue() override;
+    T dequeue() override {
+        if(list.getCount() == 0) {throw std::out_of_range("Queue empty");}
+        T val = (list.getHead())->data;
+        list.removeHead();
+        return val;
+    }
 
     // Access
-    T peek() const override;
+    T peek() const override {
+        if(list.getCount() == 0) {throw std::out_of_range("Queue empty");}
+        return ((list.getHead())->data);
+    }
 
     // Getter
-    std::size_t getSize() const noexcept override;
+    std::size_t getSize() const noexcept override {return static_cast<size_t>(list.getCount());}
 
 };

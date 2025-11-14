@@ -13,15 +13,31 @@ public:
     // Constructor
     LLS();
 
+    void PrintForward() const {
+        list.PrintForward();
+    }
+
+    void PrintReverse() const {
+        list.PrintReverse();
+    }
+
     // Insertion
-    void push(const T& item) override;
+    void push(const T& item) override {list.addHead(item);}
 
     // Deletion
-    T pop() override;
+    T pop() override {
+        if(list.getCount() == 0) {throw std::out_of_range("Stack empty");}
+        T val = (list.getHead())->data;
+        list.removeHead();
+        return val;
+    }
 
     // Access
-    T peek() const override;
+    T peek() const override {
+        if(list.getCount() == 0) {throw std::out_of_range("Stack empty");}
+        return ((list.getHead())->data);
+    }
 
     //Getters
-    std::size_t getSize() const noexcept override;
+    std::size_t getSize() const noexcept override {return static_cast<size_t>(list.getCount());}
 };
