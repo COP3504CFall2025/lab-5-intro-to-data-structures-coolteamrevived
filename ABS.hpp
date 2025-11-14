@@ -110,12 +110,22 @@ public:
 
     T pop() override {
         if(curr_size_ == 0){throw std::runtime_error("empty"); }
-        else
-        { 
-            T value = array_[curr_size_-1];
-            curr_size_--;
-            return value; 
+        T value = array_[curr_size_-1];
+        curr_size_--;
+
+        if(curr_size_ <= capacity_ /4 && capacity > 1){
+            size_t newcap = capacity_/2;
+            if(newcap < 1) {newcap = 1;}
+            T* novarray_ new T[newcap];
+            for(size_t i = 0; i<curr_size_; i++){
+                novarray_[i] = array_[i];
+            }
+            delete[] array_;
+            array_ = novarray_;
+            capacity_ = newcap;
         }
+
+        return value; 
     }
 
 private:

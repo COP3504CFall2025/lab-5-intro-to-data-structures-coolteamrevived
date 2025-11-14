@@ -115,6 +115,18 @@ public:
             array_[i - 1] = array_[i];
         }
 
+        if(curr_size_ <= capacity_ /4 && capacity > 1){
+            size_t newcap = capacity_/2;
+            if(newcap < 1) {newcap = 1;}
+            T* novarray_ new T[newcap];
+            for(size_t i = 0; i<curr_size_; i++){
+                novarray_[i] = array_[i];
+            }
+            delete[] array_;
+            array_ = novarray_;
+            capacity_ = newcap;
+        }
+
         curr_size_--;
         return value; 
     }
